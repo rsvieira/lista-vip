@@ -51,5 +51,9 @@ public class ConvidadoController {
 		return "listaConvidados";
 	}
 
+	// criar serviço de envio de email
+	// gerar .jar
+	// retatorar codigo criando a camada de serviço 
+	
 }
 	
