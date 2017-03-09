@@ -36,6 +36,14 @@
         	<artifactId>spring-boot-devtools</artifactId>
         	<version>1.5.2.RELEASE</version>
     	</dependency>
+    	
+	<!-- Lib gerada para envio de email -->
+    	
+    	<dependency>
+		 	<groupId>br.com.alura.envioEmail</groupId>
+			<artifactId>envioEmail</artifactId>
+			<version>0.0.1-SNAPSHOT</version>    	
+    	</dependency>
 
 	</dependencies>
 

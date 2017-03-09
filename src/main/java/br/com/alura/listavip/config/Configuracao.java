@@ -10,14 +10,16 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+import br.com.alura.envioEmail.service.EmailService;
 import br.com.alura.listavip.controller.ConvidadoController;
+import br.com.alura.listavip.service.ConvidadoService;
 
 /**
  * @author Ramon Vieira
  *
  */
 
-@ComponentScan(basePackageClasses={ConvidadoController.class})
+@ComponentScan(basePackageClasses={ConvidadoController.class, ConvidadoService.class, EmailService.class})
 @EntityScan("br.com.alura.listavip.model")
 @EnableJpaRepositories("br.com.alura.listavip.repository")
 @SpringBootApplication

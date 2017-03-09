@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import br.com.alura.envioEmail.service.EmailService;
 import br.com.alura.listavip.model.Convidado;
-import br.com.alura.listavip.repository.ConvidadoRepository;
+import br.com.alura.listavip.service.ConvidadoService;
 
 /**
  * @author Ramon Vieira
@@ -19,7 +20,10 @@ import br.com.alura.listavip.repository.ConvidadoRepository;
 public class ConvidadoController {
 	
 	@Autowired
-	private ConvidadoRepository repository;
+	private ConvidadoService convidadoService;
+	
+	@Autowired
+	private EmailService emailService;
 
 	@RequestMapping("/")
 	public String index() {
@@ -29,7 +33,7 @@ public class ConvidadoController {
 	@RequestMapping("listaConvidados")
 	public String listaConvidados(Model model) {
 		
-		Iterable<Convidado>	convidados = repository.findAll();
+		Iterable<Convidado>	convidados = convidadoService.buscaTodos();
 		
 		model.addAttribute("convidados", convidados);
 		
@@ -42,18 +46,17 @@ public class ConvidadoController {
 						 @RequestParam("telefone") String telefone,
 					 Model model){
 		
-		repository.save(new Convidado(nome, email, telefone));
+		convidadoService.salvar(new Convidado(nome, email, telefone));
 		
-		Iterable<Convidado>	convidados = repository.findAll();
+		emailService.enviar(nome, email);
+		
+		Iterable<Convidado>	convidados = convidadoService.buscaTodos();
 		
 		model.addAttribute("convidados", convidados);
 	
 		return "listaConvidados";
 	}
-
-	// criar serviço de envio de email
-	// gerar .jar
-	// retatorar codigo criando a camada de serviço 
 	
 }
 	
+
