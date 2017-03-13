@@ -3,18 +3,16 @@
 Projeto de Estudo baseado nas aulas do Alura usando 'Spring Boot'.
 
 
-Usando Spring Initializr para gerar um maven project 
-...
+```Usando Spring Initializr para gerar um maven project 
 
 	https://start.spring.io/
-	
-...
+```
 
-{(Appendix do Spring)
+```Appendix do Spring
 	Utilização para configuração do arquivo 'application.properties'.
 	
 	https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
-}
+```
 
 {(Jetty)
 	Utilizando o Jetty como Servidor/Container
