@@ -3,10 +3,10 @@
 Projeto de Estudo baseado nas aulas do Alura usando 'Spring Boot'.
 
 
-```Usando Spring Initializr para gerar um maven project 
+Usando Spring Initializr para gerar um maven project 
 
 	https://start.spring.io/
-```
+
 
 ```Appendix do Spring
 	Utilização para configuração do arquivo 'application.properties'.
