@@ -1,14 +1,10 @@
 package br.com.alura.listavip.config;
 
-import javax.sql.DataSource;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import br.com.alura.envioEmail.service.EmailService;
 import br.com.alura.listavip.controller.ConvidadoController;
@@ -29,6 +25,10 @@ public class Configuracao {
 		SpringApplication.run(Configuracao.class, args);
 	}
 	
+
+	// Configuração do BD passará a ser chamada pelo 'application.properties'.
+	
+	/*
 	@Bean
 	public DataSource dataSource(){
 		
@@ -40,6 +40,6 @@ public class Configuracao {
 		dataSource.setPassword("root");
 		
 		return dataSource;
-	}
+	} */
 	
 }
